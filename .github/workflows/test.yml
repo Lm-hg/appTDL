@@ -20,5 +20,7 @@ jobs:
       - name: installation dependa,ces 
         run: composer install
 
+      - name: permission accordée
+        run: chmod +x ./vendor/bin/phpunit
       - name: Run test
         run: ./vendor/bin/phpunit --configuration phpunit.xml
