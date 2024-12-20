@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 class DatabaseConnectionTest extends TestCase {
 
     public function testconnexionReussie() {
-        $host = 'localhost';
+        $host = 'mysql';
         $user = 'root';
         $password = 'root';
         $database = 'init';
