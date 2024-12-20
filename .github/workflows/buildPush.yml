@@ -1,10 +1,10 @@
 name: docker
 
-on: [push]
-  # workflow_run:
-  #   workflows: [testUnitaire]
+on: 
+  workflow_run:
+    workflows: [testUnitaire]
 
-  #   types: [completed]  
+    types: [completed]  
 
 env:
   TEST_TAG_devops: modestin/devops:test
@@ -30,13 +30,13 @@ jobs:
       - name: Build and export devops to Docker
         uses: docker/build-push-action@v6
         with:
-          context: ./db
+          context: ../db
           load: true
           tags: ${{ env.TEST_TAG_devops }}
 
-      # - name: Test
-      #   run: |
-      #     docker run --rm ${{ env.TEST_TAG_devops }}
+      - name: Test
+        run: |
+          docker run --rm ${{ env.TEST_TAG_devops }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
@@ -51,9 +51,9 @@ jobs:
           load: true
           tags: ${{ env.TEST_TAG_mysql }}
 
-      # - name: Test
-      #   run: |
-      #     docker run --rm ${{ env.TEST_TAG_mysql }}
+      - name: Test
+        run: |
+          docker run --rm ${{ env.TEST_TAG_mysql }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
