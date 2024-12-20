@@ -25,4 +25,4 @@ jobs:
       - name: Run test
         run: ./vendor/bin/phpunit --configuration phpunit.xml
       - name: afficher success
-        run: echo "termine et reussie"
+        run: echo "operation reussie"
