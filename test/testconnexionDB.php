@@ -10,5 +10,6 @@ class DatabaseConnectionTest extends TestCase {
         $database = 'test_database';
         require_once '../php/connect.php';
         $db = connectDatabase($host, $user, $password, $database);
+        $this->assertNotFalse($db, "La connexion n'a pas échoué comme attendu");
     }
 }
