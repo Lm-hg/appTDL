@@ -7,7 +7,7 @@ class DatabaseConnectionTest extends TestCase {
         $host = 'localhost';
         $user = 'root';
         $password = 'root';
-        $database = 'test_database';
+        $database = 'init';
         require_once '../php/connect.php';
         $db = connectDatabase($host, $user, $password, $database);
         $this->assertNotFalse($db, "La connexion n'a pas échoué comme attendu");
