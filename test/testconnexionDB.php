@@ -3,7 +3,7 @@ use PHPUnit\Framework\TestCase;
 
 class DatabaseConnectionTest extends TestCase {
 
-    public function connexionReussie() {
+    public function testconnexionReussie() {
         $host = 'localhost';
         $user = 'root';
         $password = 'root';
@@ -12,5 +12,3 @@ class DatabaseConnectionTest extends TestCase {
         $db = connectDatabase($host, $user, $password, $database);
     }
 }
-$test = new DatabaseConnectionTest();
-$test-> connexionReussie();
