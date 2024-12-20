@@ -1,10 +1,10 @@
 name: docker
 
-on:
-  workflow_run:
-    workflows: [testUnitaire]
+on: [push]
+  # workflow_run:
+  #   workflows: [testUnitaire]
 
-    types: [completed]  
+  #   types: [completed]  
 
 env:
   TEST_TAG_devops: modestin/devops:test
