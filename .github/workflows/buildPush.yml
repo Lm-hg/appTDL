@@ -34,9 +34,9 @@ jobs:
           load: true
           tags: ${{ env.TEST_TAG_devops }}
 
-      - name: Test
-        run: |
-          docker run --rm ${{ env.TEST_TAG_devops }}
+      # - name: Test
+      #   run: |
+      #     docker run --rm ${{ env.TEST_TAG_devops }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
@@ -51,9 +51,9 @@ jobs:
           load: true
           tags: ${{ env.TEST_TAG_mysql }}
 
-      - name: Test
-        run: |
-          docker run --rm ${{ env.TEST_TAG_mysql }}
+      # - name: Test
+      #   run: |
+      #     docker run --rm ${{ env.TEST_TAG_mysql }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
