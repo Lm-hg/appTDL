@@ -30,7 +30,7 @@ jobs:
       - name: Build and export devops to Docker
         uses: docker/build-push-action@v6
         with:
-          contexte: ./db
+          context: ./db
           load: true
           tags: ${{ env.TEST_TAG_devops }}
 
@@ -41,13 +41,13 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          platforms: windows/amd64,windows/arm64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.LATEST_TAG_devops }}
       - name: Build and export mysql to Docker
         uses: docker/build-push-action@v6
         with:
-          contexte: .
+          context: .
           load: true
           tags: ${{ env.TEST_TAG_mysql }}
 
@@ -58,6 +58,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          platforms: windows/amd64,windows/arm64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.LATEST_TAG_devops_mysql }}
