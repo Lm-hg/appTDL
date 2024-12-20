@@ -30,7 +30,7 @@ jobs:
       - name: Build and export devops to Docker
         uses: docker/build-push-action@v6
         with:
-          context: ../db
+          context: ./db
           load: true
           tags: ${{ env.TEST_TAG_devops }}
 
@@ -47,7 +47,7 @@ jobs:
       - name: Build and export mysql to Docker
         uses: docker/build-push-action@v6
         with:
-          context: ../
+          context: .
           load: true
           tags: ${{ env.TEST_TAG_mysql }}
 
