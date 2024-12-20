@@ -1,5 +1,5 @@
 <?php
-function connectDatabase() {
+function connectDatabase($db_host,$db_user,$db_password,$db_name) {
     $db_host = 'mysql';
     $db_user = 'root';
     $db_password ='root_password';
@@ -15,7 +15,7 @@ function connectDatabase() {
 }
 
 try {
-    $db = connectDatabase();
+    $db = connectDatabase('mysql','root','root_passwoed','init');
 } catch (Exception $e) {
     echo $e->getMessage();
     exit;
