@@ -12,3 +12,5 @@ class DatabaseConnectionTest extends TestCase {
         $db = connectDatabase($host, $user, $password, $database);
     }
 }
+$test = new DatabaseConnectionTest();
+$test-> connexionReussie();
